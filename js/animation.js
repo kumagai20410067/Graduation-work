@@ -27,3 +27,26 @@ bar.animate(1.0, function () {
   $("#splash").delay(500).fadeOut(800);
   $("#container").fadeIn();
 });
+
+const moon = document.querySelector('.moon');
+const earth = document.querySelector('.earth');
+
+let angle = 0;
+
+function rotateMoon() {
+  const radius = 250; // 地球から月までの距離
+  const speed = 0.005; // 月の回転速度（適宜調整）
+
+  const x = radius * Math.cos(angle);
+  const y = radius * Math.sin(angle);
+
+  moon.style.left = `${earth.offsetLeft + earth.offsetWidth / 2 + x}px`;
+  moon.style.top = `${earth.offsetTop + earth.offsetHeight / 2 + y}px`;
+
+  angle += speed;
+
+  requestAnimationFrame(rotateMoon);
+}
+
+rotateMoon();
+

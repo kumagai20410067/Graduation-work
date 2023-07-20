@@ -1,43 +1,36 @@
 <!DOCTYPE html>
 <html lang="ja">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="css/animation.css">
-  <title>Animation</title>
-</head>
-<body>
-  <!DOCTYPE html>
-  <!DOCTYPE html>
-  <html>
+
   <head>
-    <title>Walking on a Rotating Earth</title>
-    
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/animation.css">
+    <title>Animation</title>
   </head>
+
   <body>
     <div id="splash">
       <div id="splash_text"></div>
     </div>
     <main>
-        <!-- 羽ばたく鳥 -->
-        <div class="bird"></div>
-        <div class="bird -type_2"></div>
-        <div class="bird -type_3"></div>
-        <!-- 廻る地球 -->
-        <div class="earth"></div>
-        <div class="section"></div>
-  </main>
+      <!-- 羽ばたく鳥 -->
+      <div class="bird"></div>
+      <div class="bird -type_2"></div>
+      <div class="bird -type_3"></div>
+      <!--地球 -->
+      <div class="earth"></div>
+      <!-- 月 -->
+      <div class="rotate-center moon">
+      </div>
+    </main>
+
+    <!-- js -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+      integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="https://rawgit.com/kimmobrunfeldt/progressbar.js/master/dist/progressbar.min.js"></script>
+    <script src="js/animation.js"></script>
+    <!-- js -->
   </body>
-  </html>
-  
 
- 
-
-  <!-- js -->
-  <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-  <script src="https://rawgit.com/kimmobrunfeldt/progressbar.js/master/dist/progressbar.min.js"></script>
-  <script src="js/animation.js"></script>
-  <!-- js -->
-</body>
 </html>
