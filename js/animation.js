@@ -1,32 +1,24 @@
-var bar = new ProgressBar.Line(splash_text, {
-  easing: 'easeInOut',
-  duration: 1000,
-  strokeWidth: 0.2,
-  color: '#555',
-  trailWidth: 0.2,
-  trailColor: '#bbb',
-  text: {
-    style: {
-      position: 'absolute',
-      left: '50%',
-      top: '50%',
-      padding: '0',
-      margin: '-30px 0 0 0',
-      transform: 'translate(-50%,-50%)',
-      'font-size': '1rem',
-      color: '#fff'
-    },
-    autoStyleContainer: false
-  },
-  step: function (state, bar) {
-    bar.setText(Math.round(bar.value() * 100) + '%');
-  }
-});
+//画面がロードされたタイミングでロード画面を非表示にする
+window.onload = function () {
+  const spinner = document.getElementById('loading');
 
-bar.animate(1.0, function () {
-  $("#splash").delay(500).fadeOut(800);
-  $("#container").fadeIn();
-});
+  // Add .loaded to .loading
+  spinner.classList.add('loaded');
+}
+
+//指定秒数後にロード画面を非表示にする
+// ページの読み込みが完了したら実行
+// window.onload = function () {
+//   // ローディング画面を非表示にする関数
+//   function hideLoadingScreen() {
+//     const spinner = document.getElementById('loading');
+//     spinner.style.opacity = 0;
+//     spinner.style.visibility = 'hidden';
+//   }
+
+//   // n秒後にローディング画面を非表示にする
+//   setTimeout(hideLoadingScreen, 1000);
+// };
 
 const moon = document.querySelector('.moon');
 const earth = document.querySelector('.earth');
