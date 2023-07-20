@@ -93,7 +93,13 @@
   visibility: hidden;
 }
 
+/* Loading画面ここまで */
 
+
+/* 吹き出しのスタイル */
+.earth-container {
+  position: relative;
+}
 
 /* 地球 */
 .earth {
@@ -105,6 +111,27 @@
   border-radius: 50%;
   box-shadow: -20px 0 3px rgba(0, 0, 0, 0.3) inset;
   z-index: 1;
+}
+
+.description {
+  position: absolute;
+  bottom: 120%;
+  left: 50%;
+  display: none;
+  width: 150px;
+  padding: 8px;
+  background-color: #333;
+  color: #fff;
+  border-radius: 4px;
+  font-size: 14px;
+  white-space: nowrap;
+  text-align: center;
+  transform: translateX(-50%);
+  z-index: 2;
+}
+
+.earth-container:hover .description {
+  display: block;
 }
 
 .earth:before {
@@ -131,6 +158,20 @@
   100% {
     background-position: -200% 0;
   }
+}
+
+/* ここまで地球 */
+
+/* 月 */
+.moon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: goldenrod;
 }
 
 /* 羽ばたく鳥 */
@@ -417,17 +458,70 @@
   }
 }
 
-/* 月 */
+/* 要素のスタイル */
+.hover-element {
+  position: relative;
+  padding: 10px;
+  background-color: #f0f0f0;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/* 吹き出しのスタイル */
+.hover-element .description {
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  display: none;
+  padding: 8px;
+  background-color: #333;
+  color: #fff;
+  border-radius: 4px;
+  font-size: 14px;
+  white-space: nowrap;
+}
+
+/* マウスオーバー時に吹き出しを表示 */
+.hover-element:hover .description {
+  display: block;
+}
+
+/* 月のスタイル */
+.moon-container {
+  position: absolute;
+  top: 35%;
+  /* 調整可能な値 */
+  left: 45%;
+  /* 調整可能な値 */
+  transform: translate(-50%, -50%);
+  width: 20px;
+  /* 調整可能な値 */
+  height: 20px;
+  /* 調整可能な値 */
+}
+
+/* 月の自転アニメーション */
 .moon {
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
   width: 50px;
   height: 50px;
   border-radius: 50%;
   background-color: goldenrod;
+  animation: moonRotation 10s linear infinite;
 }
+
+@keyframes moonRotation {
+  from {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+
+  to {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
 
 /****** Base style. ******/
 body {

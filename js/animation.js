@@ -42,3 +42,21 @@ function rotateMoon() {
 
 rotateMoon();
 
+// クリック時の動作
+document.querySelector('.earth').addEventListener('click', () => {
+  const detailPageURL = "animation.html"; // 詳細ページへのURLを指定
+  window.location.href = detailPageURL; // 詳細ページに遷移
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+  const earthContainer = document.querySelector(".earth-container");
+  const earthDescription = document.querySelector(".earth-container .description");
+
+  earthContainer.addEventListener("click", function () {
+    if (earthDescription.style.display === "block") {
+      earthDescription.style.display = "none";
+    } else {
+      earthDescription.style.display = "block";
+    }
+  });
+});
